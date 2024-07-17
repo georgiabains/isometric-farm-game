@@ -1,3 +1,20 @@
+/**
+ * Farm.
+ * - A tile from which to grow plants.
+ *
+ * Has:
+ * - crop / isGrowingCrop ?
+ * - water -- is this something I want to keep track of?
+ * - nutrient/fertility -- boost? buff?
+ *
+ * Does:
+ * - plantCrop() -- its kind of a setter? but not rly
+ * - growCrop()
+ * - harvestCrop()
+ * - spawnDisease()
+ * - spawnPest()
+ */
+
 using Godot;
 using System;
 
