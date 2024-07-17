@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://geq7mn2tkj3e"]
+
+[ext_resource type="PackedScene" uid="uid://bxgxaoqg6036d" path="res://src/Farm.tscn" id="1_38g20"]
+[ext_resource type="PackedScene" uid="uid://67a05awy4vk" path="res://src/Player.tscn" id="2_p0pul"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4o1en"]
+size = Vector3(64, 1, 64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_upsuu"]
+size = Vector3(64, 1, 64)
+
+[node name="Main" type="Node"]
+
+[node name="World" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="WorldCollision" type="CollisionShape3D" parent="World"]
+shape = SubResource("BoxShape3D_4o1en")
+
+[node name="WorldMesh" type="MeshInstance3D" parent="World"]
+mesh = SubResource("BoxMesh_upsuu")
+
+[node name="Farm" parent="World" instance=ExtResource("1_38g20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, -2)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.612372, 0.353554, 0, 0.5, 0.866025, -0.707107, -0.612372, 0.353554, 0, 15, 0)
+shadow_enabled = true
+
+[node name="Camera" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(0.816138, 0.333919, -0.471611, 0, 0.816138, 0.577858, 0.577858, -0.471611, 0.666081, -24, 28, 32)
+projection = 1
+size = 55.285
+far = 1035.57
+
+[node name="Player" parent="." instance=ExtResource("2_p0pul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 16.4041)
