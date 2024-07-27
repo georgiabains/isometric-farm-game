@@ -47,6 +47,7 @@ public partial class Farm : StaticBody3D
 
 			GD.Print("open up farm UI");
 			GD.Print(GlobalPosition);
+			EventBus.Subscription.Emit(this, "on-farm-click", GlobalPosition);
 		}
 	}
 }
