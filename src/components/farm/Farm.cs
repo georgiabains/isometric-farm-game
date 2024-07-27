@@ -45,9 +45,8 @@ public partial class Farm : StaticBody3D
 				return;
 			}
 
-			GD.Print("open up farm UI");
-			GD.Print(GlobalPosition);
-			EventBus.Subscription.Emit(this, "on-farm-click", GlobalPosition);
+			Vector2 farmPosition2D = GetViewport().GetCamera3D().UnprojectPosition(GlobalPosition);
+			EventBus.Subscription.Emit(this, "on-farm-click", farmPosition2D);
 		}
 	}
 }
