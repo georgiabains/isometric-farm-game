@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://geq7mn2tkj3e"]
 
-[ext_resource type="PackedScene" uid="uid://bxgxaoqg6036d" path="res://src/Farm.tscn" id="1_38g20"]
-[ext_resource type="PackedScene" uid="uid://67a05awy4vk" path="res://src/Player.tscn" id="2_p0pul"]
+[ext_resource type="PackedScene" uid="uid://bbe5u1aa0ooe8" path="res://src/components/farm/Farm.tscn" id="1_38g20"]
+[ext_resource type="PackedScene" uid="uid://bxo5t0or1vh13" path="res://src/components/player/Player.tscn" id="2_p0pul"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4o1en"]
 size = Vector3(64, 1, 64)

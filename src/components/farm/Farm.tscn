@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxgxaoqg6036d"]
+[gd_scene load_steps=5 format=3 uid="uid://bbe5u1aa0ooe8"]
+
+[ext_resource type="Script" path="res://src/components/farm/Farm.cs" id="1_j0nac"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1h726"]
 size = Vector3(4, 1, 4)
@@ -10,10 +12,21 @@ albedo_color = Color(0.166876, 0.0446966, 0.0183795, 1)
 size = Vector3(4, 1, 4)
 
 [node name="Farm" type="StaticBody3D"]
+script = ExtResource("1_j0nac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1h726")
 
+[node name="MenuButton" type="MenuButton" parent="CollisionShape3D"]
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_right = -0.0640001
+offset_bottom = 0.224
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_kv2gx")
 mesh = SubResource("BoxMesh_5wn8x")
+
+[connection signal="input_event" from="." to="." method="OnInputEvent"]
+[connection signal="gui_input" from="CollisionShape3D/MenuButton" to="." method="OnMenuButtonGuiInput"]
