@@ -23,10 +23,29 @@ public partial class Farm : StaticBody3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print("ready");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+	}
+
+	private static void OnMouseEntered()
+	{
+		GD.Print("test");
+	}
+
+	private void OnInputEvent(Node camera, InputEvent @event, Vector3 position, Vector3 normal, long shape_idx)
+	{
+		if (@event is InputEventMouseButton mouseButton)
+		{
+			if (mouseButton.Pressed)
+			{
+				return;
+			}
+
+			GD.Print("open up farm UI");
+		}
 	}
 }
