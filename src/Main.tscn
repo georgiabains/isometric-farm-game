@@ -15,8 +15,8 @@ size = Vector3(64, 1, 64)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="FarmPopup" type="CanvasLayer" parent="CanvasLayer"]
-offset = Vector2(739, 309)
-transform = Transform2D(1, 0, 0, 1, 739, 309)
+offset = Vector2(739, 341)
+transform = Transform2D(1, 0, 0, 1, 739, 341)
 follow_viewport_enabled = true
 script = ExtResource("1_hbccn")
 

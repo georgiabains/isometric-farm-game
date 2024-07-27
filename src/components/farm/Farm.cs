@@ -45,8 +45,10 @@ public partial class Farm : StaticBody3D
 				return;
 			}
 
+			// Get 2D unproject position of farm tile and pass coordinates in EventBus
 			Vector2 farmPosition2D = GetViewport().GetCamera3D().UnprojectPosition(GlobalPosition);
-			EventBus.Event.Emit(this, "on-farm-click", farmPosition2D);
+			dynamic eventProperties = new { farmCoordinates = farmPosition2D };
+			EventBus.Event.Emit(this, "on-farm-click", eventProperties);
 		}
 	}
 }

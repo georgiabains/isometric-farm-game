@@ -5,7 +5,7 @@ using System.Collections.Generic;
 static class EventBus
 {
 	private static Dictionary<string, List<EventHandler>> channels = new();
-	public delegate void EventHandler(Node3D sender, string channel, object[] args);
+	public delegate void EventHandler(Node3D sender, string channel, dynamic args);
 
 	public class Event : IDisposable
 	{
@@ -51,7 +51,7 @@ static class EventBus
 			return new Event(channel, handler);
 		}
 
-		public static int Emit(Node3D sender, string channel, params object[] args)
+		public static int Emit(Node3D sender, string channel, dynamic args)
 		{
 			if (!channels.TryGetValue(channel, out var handlers))
 			{
