@@ -11,6 +11,29 @@ size = Vector3(64, 1, 64)
 
 [node name="Main" type="Node"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FarmPopup" type="CanvasLayer" parent="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/FarmPopup"]
+offset_right = 143.0
+offset_bottom = 204.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FarmPopup/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/FarmPopup/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "hello world"
+
+[node name="Label2" type="Label" parent="CanvasLayer/FarmPopup/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "test
+"
+
 [node name="World" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
@@ -23,6 +46,12 @@ mesh = SubResource("BoxMesh_upsuu")
 [node name="Farm" parent="World" instance=ExtResource("1_38g20")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, -2)
 
+[node name="Player" parent="World" instance=ExtResource("2_p0pul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 16.4041)
+
+[node name="Farm2" parent="World" instance=ExtResource("1_38g20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.35, 0.25, 9)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -0.612372, 0.353554, 0, 0.5, 0.866025, -0.707107, -0.612372, 0.353554, 0, 15, 0)
 shadow_enabled = true
@@ -34,6 +63,3 @@ transform = Transform3D(0.816138, 0.333919, -0.471611, 0, 0.816138, 0.577858, 0.
 projection = 1
 size = 55.285
 far = 1035.57
-
-[node name="Player" parent="." instance=ExtResource("2_p0pul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 16.4041)
