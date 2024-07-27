@@ -46,7 +46,7 @@ public partial class Farm : StaticBody3D
 			}
 
 			Vector2 farmPosition2D = GetViewport().GetCamera3D().UnprojectPosition(GlobalPosition);
-			EventBus.Subscription.Emit(this, "on-farm-click", farmPosition2D);
+			EventBus.Event.Emit(this, "on-farm-click", farmPosition2D);
 		}
 	}
 }
